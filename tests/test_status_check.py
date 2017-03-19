@@ -10,6 +10,7 @@ def test_check_site_unknown_site():
 
 @pytest.mark.parametrize("test_site", [
     'github',
+    'twitter',
 ])
 def test_check_site_known_site(mocker, test_site):
     mocked_site_status = mocker.patch('statusbot.sites.{}_site.status'.format(test_site))

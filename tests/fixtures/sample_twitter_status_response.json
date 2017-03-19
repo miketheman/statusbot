@@ -1,0 +1,39 @@
+{
+    "code": 200,
+    "info": "1 document(s) found",
+    "elapsed": "47.5311",
+    "count": 1,
+    "result": [{
+        "_id": 125017,
+        "cur": {
+            "count": 4,
+            "status": 0,
+            "uptime": 100,
+            "upstatus": 0,
+            "weight": 0.4,
+            "apdex": 0.99999999999979,
+            "period": {
+                "from": {
+                    "sec": 1489936037,
+                    "usec": 375000
+                },
+                "until": {
+                    "sec": 1489937237,
+                    "usec": 375000
+                }
+            },
+            "score": 99.999999999986,
+            "downtime": 4.9406564584125e-324,
+            "avg": {
+                "rtime": 20.015581221113,
+                "ctime": 0,
+                "ptime": 509.33169596421,
+                "dtime": 644.61207106239,
+                "dsize": 79799.511956186,
+                "user": 1,
+                "ttime": 664.6276522835
+            },
+            "perfstatus": 0
+        }
+    }]
+}

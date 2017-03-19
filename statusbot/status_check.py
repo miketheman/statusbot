@@ -1,9 +1,11 @@
 from tldextract import TLDExtract
 
 from sites import github_site
+from sites import twitter_site
 
 KNOWN_SITES = [
     'github',
+    'twitter',
 ]
 
 
@@ -17,6 +19,8 @@ def check_site(site):
     # TODO: There must be a better way to call the site checks without a large if/elif
     if site_name == 'github':
         status = github_site.status()
+    elif site_name == 'twitter':
+        status = twitter_site.status()
 
     return site_name, status
 

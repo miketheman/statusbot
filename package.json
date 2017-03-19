@@ -1,0 +1,11 @@
+{
+  "name": "statusbot",
+  "version": "1.0.0",
+  "description": "Status Bot",
+  "repository": "https://github.com/miketheman/statusbot",
+  "author": "Mike Fiedler <miketheman@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "serverless-python-requirements": "^2.0.0"
+  }
+}

@@ -6,6 +6,7 @@ __pycache__/
 .env
 .envrc
 .installed.cfg
+.tox/
 .Python
 *.egg
 *.egg-info/
@@ -16,6 +17,7 @@ dist/
 downloads/
 eggs/
 env/
+htmlcov/
 lib/
 lib64/
 node_modules/

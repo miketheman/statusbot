@@ -1,7 +1,7 @@
 from tldextract import TLDExtract
 
-from sites import github_site
-from sites import twitter_site
+from .sites import github_site
+from .sites import twitter_site
 
 KNOWN_SITES = [
     'github',
@@ -15,7 +15,7 @@ def check_site(site):
     if site_name not in KNOWN_SITES:
         raise NotImplementedError
 
-    print "Checking site: {}".format(site)
+    print("Checking site: {}".format(site))
     # TODO: There must be a better way to call the site checks without a large if/elif
     if site_name == 'github':
         status = github_site.status()

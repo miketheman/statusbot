@@ -37,8 +37,8 @@ def check(event, context):
         'body': json.dumps(response_content),
     }
 
-    print "Response:\n"
-    print json.dumps(response)
+    print("Response:\n")
+    print(json.dumps(response))
     return response
 
 
@@ -52,14 +52,14 @@ def report(metric_value, metric_name, tags=[]):
     """
     now_in_epoch = int(datetime.utcnow().strftime("%s"))
 
-    print "MONITORING|{}|{}|gauge|{}|#{}".format(
+    print("MONITORING|{}|{}|gauge|{}|#{}".format(
         now_in_epoch,
         metric_value,
         metric_name,
         ",".join(tags)
-    )
+    ))
 
 
 if __name__ == "__main__":
-    print 'DEBUG: Will test github.com status'
-    print check({'body': "{\"result\": {\"parameters\": {\"Site\": \"github\"}}}"}, None)
+    print('DEBUG: Will test github.com status')
+    print(check({'body': "{\"result\": {\"parameters\": {\"Site\": \"github\"}}}"}, None))

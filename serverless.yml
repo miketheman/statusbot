@@ -49,6 +49,7 @@ package:
     - .git/**
     - .gitignore
     - .serverless/**
+    - .tox/**
     - dev-requirements.txt
     - htmlcov/**
     - LICENSE
@@ -58,6 +59,7 @@ package:
     - README.md
     - setup.cfg
     - tests/**
+    - tox.ini
     - yarn.lock
 
 functions:

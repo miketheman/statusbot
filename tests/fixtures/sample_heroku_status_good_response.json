@@ -1,0 +1,81 @@
+{
+  "data": [{
+    "id": "1",
+    "type": "systems",
+    "links": {
+      "self": "https://status-api.heroku.com/api/ui/systems/1"
+    },
+    "attributes": {
+      "name": "Apps",
+      "title": "Apps and Runtime",
+      "color": "green"
+    },
+    "relationships": {
+      "services": {
+        "links": {
+          "self": "https://status-api.heroku.com/api/ui/systems/1/relationships/services",
+          "related": "https://status-api.heroku.com/api/ui/systems/1/services"
+        }
+      },
+      "open-incidents": {
+        "links": {
+          "self": "https://status-api.heroku.com/api/ui/systems/1/relationships/open-incidents",
+          "related": "https://status-api.heroku.com/api/ui/systems/1/open-incidents"
+        }
+      }
+    }
+  }, {
+    "id": "2",
+    "type": "systems",
+    "links": {
+      "self": "https://status-api.heroku.com/api/ui/systems/2"
+    },
+    "attributes": {
+      "name": "Data",
+      "title": "Data Services",
+      "color": "green"
+    },
+    "relationships": {
+      "services": {
+        "links": {
+          "self": "https://status-api.heroku.com/api/ui/systems/2/relationships/services",
+          "related": "https://status-api.heroku.com/api/ui/systems/2/services"
+        }
+      },
+      "open-incidents": {
+        "links": {
+          "self": "https://status-api.heroku.com/api/ui/systems/2/relationships/open-incidents",
+          "related": "https://status-api.heroku.com/api/ui/systems/2/open-incidents"
+        }
+      }
+    }
+  }, {
+    "id": "3",
+    "type": "systems",
+    "links": {
+      "self": "https://status-api.heroku.com/api/ui/systems/3"
+    },
+    "attributes": {
+      "name": "Tools",
+      "title": "Tools",
+      "color": "green"
+    },
+    "relationships": {
+      "services": {
+        "links": {
+          "self": "https://status-api.heroku.com/api/ui/systems/3/relationships/services",
+          "related": "https://status-api.heroku.com/api/ui/systems/3/services"
+        }
+      },
+      "open-incidents": {
+        "links": {
+          "self": "https://status-api.heroku.com/api/ui/systems/3/relationships/open-incidents",
+          "related": "https://status-api.heroku.com/api/ui/systems/3/open-incidents"
+        }
+      }
+    }
+  }],
+  "meta": {
+    "record-count": 3
+  }
+}

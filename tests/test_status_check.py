@@ -10,6 +10,7 @@ def test_check_site_unknown_site():
 
 @pytest.mark.parametrize("test_site", [
     'github',
+    'heroku',
     'twitter',
 ])
 def test_check_site_known_site(mocker, test_site):
@@ -21,6 +22,8 @@ def test_check_site_known_site(mocker, test_site):
 @pytest.mark.parametrize("test_input, expected", [
     ('github', 'github'),
     ('github.com', 'github'),
+    ('heroku', 'heroku'),
+    ('heroku.com', 'heroku'),
     ('twitter', 'twitter'),
     ('twitter.com', 'twitter'),
     ('', ''),

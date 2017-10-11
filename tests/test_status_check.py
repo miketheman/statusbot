@@ -12,6 +12,7 @@ def test_check_site_unknown_site():
     'github',
     'heroku',
     'twitter',
+    'facebook',
 ])
 def test_check_site_known_site(mocker, test_site):
     mocked_site_status = mocker.patch('statusbot.sites.{}_site.status'.format(test_site))
@@ -26,6 +27,8 @@ def test_check_site_known_site(mocker, test_site):
     ('heroku.com', 'heroku'),
     ('twitter', 'twitter'),
     ('twitter.com', 'twitter'),
+    ('facebook', 'facebook'),
+    ('facebook.com', 'facebook'),
     ('', ''),
 ])
 def test_site_name_input_returns_slug(test_input, expected):

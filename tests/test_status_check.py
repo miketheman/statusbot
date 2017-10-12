@@ -29,6 +29,7 @@ def test_check_site_known_site(mocker, test_site):
     ('twitter.com', 'twitter'),
     ('facebook', 'facebook'),
     ('facebook.com', 'facebook'),
+    ('Facebook', 'facebook'),
     ('', ''),
 ])
 def test_site_name_input_returns_slug(test_input, expected):

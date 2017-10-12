@@ -24,4 +24,4 @@ def normalize_site_name(site_name):
     """
     # Prevent the default behavior of TLDExtract making an outbound request to cache TLDs
     tldextractor = TLDExtract(suffix_list_urls=False)
-    return tldextractor(site_name).domain
+    return tldextractor(site_name).domain.lower()

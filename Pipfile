@@ -1,0 +1,29 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[packages]
+
+python-dateutil = "*"
+requests = "*"
+tldextract = "*"
+
+
+[dev-packages]
+
+freezegun = "*"
+pytest = "*"
+pytest-cov = "*"
+"pytest-flake8" = "*"
+pytest-mock = "*"
+pytest-pythonpath = "*"
+pytest-socket = "*"
+responses = "*"
+
+
+[requires]
+
+python_version = "3.6"

@@ -16,8 +16,8 @@ Individual site-handling code can be found in the `statusbot/sites/` subdirector
 ## Requirments
 
 - Node.js & `yarn`
-- Python 2.7
-- Libraries per `*requirments.txt` files.
+- Python 3.6
+- Libraries per `Pipfile` files.
 - Serverless 1.x
 
 ## Actions

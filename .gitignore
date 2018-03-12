@@ -6,6 +6,7 @@ __pycache__/
 .env
 .envrc
 .installed.cfg
+.pytest_cache/
 .tox/
 .Python
 *.egg

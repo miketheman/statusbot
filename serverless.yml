@@ -10,7 +10,7 @@ plugins:
 
 provider:
   name: aws
-  runtime: python2.7
+  runtime: python3.6
   memorySize: 256 # optional, default is 1024
 
 # you can overwrite defaults here
@@ -38,9 +38,6 @@ provider:
 #    variable1: value1
 
 package:
-  # TODO: report bug in requirements plugin when no `include` section exists
-  include:
-    - requirements.txt
   exclude:
     - .cache/**
     - .direnv/**

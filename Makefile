@@ -1,4 +1,4 @@
-all: test
+all: lint test
 
 clean:
 	@find . -name \*.pyc -delete

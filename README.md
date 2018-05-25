@@ -12,15 +12,15 @@ Individual site-handling code can be found in the `statusbot/sites/` subdirector
 
 ## Components
 
-- Serverless (AWS Lambda, API Gateway)
-- api.ai
+-   Serverless (AWS Lambda, API Gateway)
+-   api.ai
 
 ## Requirments
 
-- Node.js & `yarn`
-- Python 3.6
-- Libraries per `Pipfile` files.
-- Serverless 1.x
+-   Node.js & `yarn`
+-   Python 3.6
+-   Libraries per `Pipfile` files.
+-   Serverless 1.x
 
 ## Actions
 
@@ -32,4 +32,4 @@ MIT. See `LICENSE` for details.
 
 ## Authors
 
-- Mike Fiedler, [@miketheman](https://github.com/miketheman)
+-   Mike Fiedler, [@miketheman](https://github.com/miketheman)

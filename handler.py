@@ -11,31 +11,23 @@ def check(event, context):
     # if not event or 'result' not in event or 'parameters' not in event['result'] or 'Site' not in event['result']['parameters']:
     #     raise(RuntimeError)
     if not event:
-        raise(RuntimeError)
+        raise (RuntimeError)
 
-    req_body = json.loads(event['body'])
-    site = req_body['result']['parameters']['Site']
+    req_body = json.loads(event["body"])
+    site = req_body["result"]["parameters"]["Site"]
 
     try:
         site_name, check_response = status_check.check_site(site)
 
         now = time.time()
         duration = now - start_time
-        report(duration, 'aws.lambda.statusbot.handler.duration_secs', tags=['site:{}'.format(site_name)])
+        report(duration, "aws.lambda.statusbot.handler.duration_secs", tags=["site:{}".format(site_name)])
 
-        response_content = {
-            'speech': "The status of {} site is {}".format(site_name, check_response['status']),
-        }
+        response_content = {"speech": "The status of {} site is {}".format(site_name, check_response["status"])}
     except NotImplementedError:
-        response_content = {
-            'speech': "The '{}' site has not yet been implemented.".format(site)
-        }
+        response_content = {"speech": "The '{}' site has not yet been implemented.".format(site)}
 
-    response = {
-        'statusCode': 200,
-        'headers': {'Content-type': 'application/json'},
-        'body': json.dumps(response_content),
-    }
+    response = {"statusCode": 200, "headers": {"Content-type": "application/json"}, "body": json.dumps(response_content)}
 
     print("Response:\n")
     print(json.dumps(response))
@@ -52,14 +44,9 @@ def report(metric_value, metric_name, tags=[]):
     """
     now_in_epoch = int(datetime.utcnow().strftime("%s"))
 
-    print("MONITORING|{}|{}|gauge|{}|#{}".format(
-        now_in_epoch,
-        metric_value,
-        metric_name,
-        ",".join(tags)
-    ))
+    print("MONITORING|{}|{}|gauge|{}|#{}".format(now_in_epoch, metric_value, metric_name, ",".join(tags)))
 
 
 if __name__ == "__main__":
-    print('DEBUG: Will test github.com status')
-    print(check({'body': "{\"result\": {\"parameters\": {\"Site\": \"github\"}}}"}, None))
+    print("DEBUG: Will test github.com status")
+    print(check({"body": '{"result": {"parameters": {"Site": "github"}}}'}, None))

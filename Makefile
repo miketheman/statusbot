@@ -12,5 +12,8 @@ setup:
 	@yarn install
 	@pipenv install --dev
 
+lint:
+	@black --line-length=160 *.py statusbot/ tests/
+
 test:
 	@pytest

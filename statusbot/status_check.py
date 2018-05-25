@@ -7,7 +7,7 @@ def check_site(site):
     site_name = normalize_site_name(site)
 
     try:
-        module_name = 'statusbot.sites.' + site_name + '_site'
+        module_name = "statusbot.sites." + site_name + "_site"
         imported_module = importlib.import_module(module_name)
     except ImportError:
         raise NotImplementedError

@@ -12,7 +12,7 @@ def check_site(site):
     except ImportError:
         raise NotImplementedError
 
-    print("Checking site: {}".format(site))
+    print(f"Checking site: {site}")
     status = imported_module.status()
 
     return site_name, status

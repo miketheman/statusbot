@@ -10,7 +10,7 @@ def test_check_site_unknown_site():
 
 @pytest.mark.parametrize("test_site", ["github", "heroku", "twitter", "facebook"])
 def test_check_site_known_site(mocker, test_site):
-    mocked_site_status = mocker.patch("statusbot.sites.{}_site.status".format(test_site))
+    mocked_site_status = mocker.patch(f"statusbot.sites.{test_site}_site.status")
     status_check.check_site(test_site)
     assert mocked_site_status.call_count == 1
 

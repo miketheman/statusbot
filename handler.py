@@ -21,11 +21,12 @@ def check(event, context):
 
         now = time.time()
         duration = now - start_time
-        report(duration, "aws.lambda.statusbot.handler.duration_secs", tags=["site:{}".format(site_name)])
+        report(duration, "aws.lambda.statusbot.handler.duration_secs", tags=[f"site:{site_name}"])
 
-        response_content = {"speech": "The status of {} site is {}".format(site_name, check_response["status"])}
+        check_status = check_response["status"]
+        response_content = {"speech": f"The status of {site_name} site is {check_status}"}
     except NotImplementedError:
-        response_content = {"speech": "The '{}' site has not yet been implemented.".format(site)}
+        response_content = {"speech": f"The '{site}' site has not yet been implemented."}
 
     response = {"statusCode": 200, "headers": {"Content-type": "application/json"}, "body": json.dumps(response_content)}
 
@@ -44,7 +45,8 @@ def report(metric_value, metric_name, tags=[]):
     """
     now_in_epoch = int(datetime.utcnow().strftime("%s"))
 
-    print("MONITORING|{}|{}|gauge|{}|#{}".format(now_in_epoch, metric_value, metric_name, ",".join(tags)))
+    tags_string = ",".join(tags)
+    print(f"MONITORING|{now_in_epoch}|{metric_value}|gauge|{metric_name}|#{tags_string}")
 
 
 if __name__ == "__main__":

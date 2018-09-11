@@ -37,7 +37,7 @@ def test_handler_status_check(mocker, apiai_event):
     response = check(apiai_event, None)
     assert response["statusCode"] == 200
     assert response["headers"]["Content-type"] == "application/json"
-    assert json.loads(response["body"])["speech"] == "The status of github site is good"
+    assert json.loads(response["body"])["speech"] == "The status of github site is good See https://status.github.com/ for more"
 
 
 def test_handler_status_unknown_site(mocker, apiai_event_unimplemented):

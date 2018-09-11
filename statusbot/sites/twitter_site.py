@@ -4,6 +4,7 @@ import requests
 from dateutil.tz import tzutc
 
 STATUS_ENDPOINT = "https://mongocache.asm.ca.com/synth/current/39657/monitor/125017/?fields=cur"
+WEBSITE = "https://status.twitterstat.us/"
 
 
 def status():

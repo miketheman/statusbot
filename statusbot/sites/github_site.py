@@ -2,6 +2,7 @@ import requests
 from dateutil.parser import parse
 
 BASE_URL = "https://status.github.com/api"
+WEBSITE = "https://status.github.com/"
 
 
 def status():

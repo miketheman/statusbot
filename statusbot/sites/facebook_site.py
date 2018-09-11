@@ -3,6 +3,7 @@ from datetime import datetime
 import requests
 
 STATUS_ENDPOINT = "https://www.facebook.com/platform/api-status/"
+WEBSITE = "https://developers.facebook.com/status"
 
 
 def status():

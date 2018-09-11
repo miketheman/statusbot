@@ -3,6 +3,7 @@ from datetime import datetime
 import requests
 
 BASE_URL = "https://status-api.heroku.com/api/ui/systems"
+WEBSITE = "https://status.heroku.com/"
 
 
 def status():

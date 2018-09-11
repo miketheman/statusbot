@@ -15,7 +15,13 @@ def check_site(site):
     print(f"Checking site: {site}")
     status = imported_module.status()
 
-    return site_name, status
+    # Not every module has a public-facing website
+    try:
+        website = imported_module.WEBSITE
+    except AttributeError:
+        website = ""
+
+    return site_name, status, website
 
 
 def normalize_site_name(site_name):

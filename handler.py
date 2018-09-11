@@ -17,14 +17,20 @@ def check(event, context):
     site = req_body["result"]["parameters"]["Site"]
 
     try:
-        site_name, check_response = status_check.check_site(site)
+        site_name, check_response, website = status_check.check_site(site)
 
         now = time.time()
         duration = now - start_time
         report(duration, "aws.lambda.statusbot.handler.duration_secs", tags=[f"site:{site_name}"])
 
         check_status = check_response["status"]
-        response_content = {"speech": f"The status of {site_name} site is {check_status}"}
+
+        text = f"The status of {site_name} site is {check_status}"
+
+        if website:
+            text += f" See {website} for more"
+
+        response_content = {"speech": text}
     except NotImplementedError:
         response_content = {"speech": f"The '{site}' site has not yet been implemented."}
 

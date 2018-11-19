@@ -1,8 +1,16 @@
 import json
+import os
 import time
 from datetime import datetime
 
+# Patch all supported libraries for X-Ray - More info: https://docs.aws.amazon.com/xray/latest/devguide/xray-sdk-python-patching.html
+from aws_xray_sdk.core import patch_all
+
 from statusbot import status_check
+
+# Only instrument libraries if running in Lambda
+if os.getenv("LAMBDA_TASK_ROOT") and os.getenv("AWS_EXECUTION_ENV"):
+    patch_all()
 
 
 def check(event, context):

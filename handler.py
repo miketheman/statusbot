@@ -3,6 +3,8 @@ import os
 import time
 from datetime import datetime
 
+from cerberus import Validator
+
 # Patch all supported libraries for X-Ray - More info: https://docs.aws.amazon.com/xray/latest/devguide/xray-sdk-python-patching.html
 from aws_xray_sdk.core import patch_all
 
@@ -15,11 +17,8 @@ if os.getenv("LAMBDA_TASK_ROOT") and os.getenv("AWS_EXECUTION_ENV"):
 
 def check(event, context):
     start_time = time.time()
-    # TODO: It feels like there should be a better way to validate a dict
-    # if not event or 'result' not in event or 'parameters' not in event['result'] or 'Site' not in event['result']['parameters']:
-    #     raise(RuntimeError)
-    if not event:
-        raise (RuntimeError)
+
+    validate_event(event)
 
     req_body = json.loads(event["body"])
     site = req_body["result"]["parameters"]["Site"]
@@ -41,6 +40,31 @@ def check(event, context):
     print("Response:\n")
     print(json.dumps(response))
     return response
+
+
+def validate_event(event):
+    if not event:
+        raise (RuntimeError)
+
+    event_schema = {"body": {"type": "string", "required": True}}
+    v = Validator()
+    v.allow_unknown = True
+
+    valid_event = v.validate(event, event_schema)
+    if not valid_event:
+        raise (RuntimeError)
+
+    body_schema = {
+        "result": {
+            "type": "dict",
+            "required": True,
+            "schema": {"parameters": {"type": "dict", "required": True, "schema": {"Site": {"type": "string", "required": True}}}},
+        }
+    }
+
+    valid_body = v.validate(json.loads(event["body"]), body_schema)
+    if not valid_body:
+        raise (RuntimeError)
 
 
 def report(metric_value, metric_name, tags=[]):

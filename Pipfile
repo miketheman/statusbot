@@ -8,6 +8,7 @@ python-dateutil = "*"
 requests = "*"
 tldextract = "*"
 aws-xray-sdk = "*"
+cerberus = "*"
 
 [dev-packages]
 black = "*"

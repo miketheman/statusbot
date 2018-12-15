@@ -24,14 +24,15 @@ def test_handler_missing_event_raises():
 
 
 def test_handler_missing_params_raises():
-    with pytest.raises(KeyError):
+    with pytest.raises(RuntimeError):
         check({"result": {}}, None)
-    with pytest.raises(KeyError):
+    with pytest.raises(RuntimeError):
         check({"result": {"parameters": {}}}, None)
+    with pytest.raises(RuntimeError):
+        check({"result": {"parameters": {"Site": None}}}, None)
 
 
 def test_handler_status_check(mocker, apiai_event):
-
     def mock_status():
         return {"status": "good", "updated": "now"}
 

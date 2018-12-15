@@ -10,7 +10,7 @@ plugins:
 
 provider:
   name: aws
-  runtime: python3.6
+  runtime: python3.7
   memorySize: 256 # optional, default is 1024
 
 # you can overwrite defaults here

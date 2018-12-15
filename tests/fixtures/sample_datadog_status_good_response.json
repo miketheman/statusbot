@@ -1,0 +1,13 @@
+{
+    "page": {
+        "id": "1k6wzpspjf99",
+        "name": "Datadog",
+        "time_zone": "America/New_York",
+        "updated_at": "2018-12-15T18:31:27.054-05:00",
+        "url": "https://status.datadoghq.com"
+    },
+    "status": {
+        "description": "All Systems Operational",
+        "indicator": "none"
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "page": {
+        "id": "kctbh9vrtdwd",
+        "name": "GitHub",
+        "time_zone": "Etc/UTC",
+        "updated_at": "2018-12-11T14:41:41.431Z",
+        "url": "https://www.githubstatus.com"
+    },
+    "status": {
+        "description": "Partially Degraded Service",
+        "indicator": "minor"
+    }
+}

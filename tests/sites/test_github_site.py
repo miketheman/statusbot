@@ -1,17 +1,32 @@
 import datetime
+import json
+
+import pytest
 import responses
 from dateutil.tz import tzutc
 
 from statusbot.sites import github_site
 
 
-@responses.activate
-def test_status_good():
-    responses.add(responses.GET, "https://status.github.com/api/status.json", json={"status": "good", "last_updated": "2017-03-12T02:32:08Z"}, status=200)
-    assert github_site.status() == {"status": "good", "updated": datetime.datetime(2017, 3, 12, 2, 32, 8, tzinfo=tzutc())}
+@pytest.fixture
+def sample_github_status_good_response():
+    with open("tests/fixtures/sample_github_status_good_response.json") as f:
+        return json.load(f)
+
+
+@pytest.fixture
+def sample_github_status_bad_response():
+    with open("tests/fixtures/sample_github_status_bad_response.json") as f:
+        return json.load(f)
 
 
 @responses.activate
-def test_status_minor():
-    responses.add(responses.GET, "https://status.github.com/api/status.json", json={"status": "minor", "last_updated": "2017-03-12T03:32:08Z"}, status=200)
-    assert github_site.status() == {"status": "minor", "updated": datetime.datetime(2017, 3, 12, 3, 32, 8, tzinfo=tzutc())}
+def test_status_good(sample_github_status_good_response):
+    responses.add(responses.GET, github_site.STATUS_URL, json=sample_github_status_good_response)
+    assert github_site.status() == {"status": "good", "updated": datetime.datetime(2018, 12, 15, 18, 31, 27, 54000, tzinfo=tzutc())}
+
+
+@responses.activate
+def test_status_not_good(sample_github_status_bad_response):
+    responses.add(responses.GET, github_site.STATUS_URL, json=sample_github_status_bad_response)
+    assert github_site.status() == {"status": "not good", "updated": datetime.datetime(2018, 12, 11, 14, 41, 41, 431000, tzinfo=tzutc())}

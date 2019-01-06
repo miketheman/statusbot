@@ -6,7 +6,7 @@ help:
 clean:  ## Remove any generated artifacts
 	@find . -name \*.pyc -delete
 	@find . -name __pycache__ -delete
-	@rm -fr .cache/ .coverage* .pytest_cache/ .requirements/ htmlcov/
+	@rm -fr .cache/ .coverage* .mutmut-cache .pytest_cache/ .requirements/ htmlcov/
 
 deploy: clean  ## Deploy application to production
 	@serverless deploy
@@ -16,4 +16,7 @@ setup:  ## Install node and python packagesa for development
 	@pipenv install --dev
 
 test:  ## Run tests
-	@pytest
+	@pipenv run pytest
+
+mutate:  ## Run mutation testing - long test cycle
+	@pipenv run mutmut run

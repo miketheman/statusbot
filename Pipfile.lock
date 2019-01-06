@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "6b1e44aeb58b049ea293c1058907aee31e40541ebce3d9d32655ff7ca5626232"
+            "sha256": "3ea620b0bccd010de0877c7998d407828d3c068b8330f8052e6d629e13dbe33c"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -228,6 +228,12 @@
             "index": "pypi",
             "version": "==0.3.11"
         },
+        "glob2": {
+            "hashes": [
+                "sha256:f5b0a686ff21f820c4d3f0c4edd216704cea59d79d00fa337e244a2f2ff83ed6"
+            ],
+            "version": "==0.6"
+        },
         "idna": {
             "hashes": [
                 "sha256:c357b3f628cf53ae2c4c05627ecc484553142ca23264e593d327bcde5e9c3407",
@@ -243,12 +249,34 @@
             ],
             "version": "==5.0.0"
         },
+        "mutmut": {
+            "hashes": [
+                "sha256:3549cdb313026260876a8b6a3012fee37375a056e4614f60b7b130508012c8d4"
+            ],
+            "index": "pypi",
+            "version": "==1.1.0"
+        },
+        "parso": {
+            "hashes": [
+                "sha256:35704a43a3c113cce4de228ddb39aab374b8004f4f2407d070b6a2ca784ce8a2",
+                "sha256:895c63e93b94ac1e1690f5fdd40b65f07c8171e3e53cbd7793b5b96c0e0a7f24"
+            ],
+            "version": "==0.3.1"
+        },
         "pluggy": {
             "hashes": [
                 "sha256:447ba94990e8014ee25ec853339faf7b0fc8050cdc3289d4d71f7f410fb90095",
                 "sha256:bde19360a8ec4dfd8a20dcb811780a30998101f078fc7ded6162f0076f50508f"
             ],
             "version": "==0.8.0"
+        },
+        "pony": {
+            "hashes": [
+                "sha256:0d72f4ab9d50d42f275606c0c2812aa704bf3a37ac8f2a60c9892eff3f90d615",
+                "sha256:b18434011c03c2981e44a2cfbbaeec4bdebe30adb434d1dfd6be8f59d07f37bd",
+                "sha256:c6dee426b50001a5cf984f201b2b61d66acd8f5018813e3a587467971f30ec2a"
+            ],
+            "version": "==0.7.6"
         },
         "py": {
             "hashes": [
@@ -339,6 +367,18 @@
                 "sha256:235682dd292d5899d361a811df37e04a8828a5b1da3115886b73cf81ebc9100e"
             ],
             "version": "==0.10.0"
+        },
+        "tri.declarative": {
+            "hashes": [
+                "sha256:e661d95f8537bcbb666f07799ba8594478c21f27defc458d2b28aa9682c3c597"
+            ],
+            "version": "==1.1.0"
+        },
+        "tri.struct": {
+            "hashes": [
+                "sha256:1ab4804ca6e174e346df3110fbe580a1ce347b646c97542ec5f34861e528936a"
+            ],
+            "version": "==2.5.7"
         },
         "urllib3": {
             "hashes": [

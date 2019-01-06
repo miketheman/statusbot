@@ -18,6 +18,7 @@ pytest-pythonpath = "*"
 pytest-socket = "*"
 responses = "*"
 pytest-black = "*"
+mutmut = "*"
 
 [requires]
 python_version = "3.7"

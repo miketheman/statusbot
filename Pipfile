@@ -10,7 +10,6 @@ tldextract = "*"
 aws-xray-sdk = "*"
 
 [dev-packages]
-black = "*"
 freezegun = "*"
 pytest = "<4.1"
 pytest-cov = "*"
@@ -21,6 +20,3 @@ responses = "*"
 
 [requires]
 python_version = "3.7"
-
-[pipenv]
-allow_prereleases = true

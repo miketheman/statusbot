@@ -13,7 +13,7 @@ if os.getenv("LAMBDA_TASK_ROOT") and os.getenv("AWS_EXECUTION_ENV"):
     patch_all()
 
 
-def check(event, context):
+def check(event, _context):
     start_time = time.time()
     # TODO: It feels like there should be a better way to validate a dict
     # if not event or 'result' not in event or 'parameters' not in event['result'] or 'Site' not in event['result']['parameters']:

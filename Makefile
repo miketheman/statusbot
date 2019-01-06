@@ -1,4 +1,4 @@
-all: lint test
+all: test
 
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
@@ -14,9 +14,6 @@ deploy: clean  ## Deploy application to production
 setup:  ## Install node and python packagesa for development
 	@yarn install
 	@pipenv install --dev
-
-lint:  ## Run code linter
-	@black --line-length=160 *.py statusbot/ tests/
 
 test:  ## Run tests
 	@pytest

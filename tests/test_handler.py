@@ -31,7 +31,6 @@ def test_handler_missing_params_raises():
 
 
 def test_handler_status_check(mocker, apiai_event):
-
     def mock_status():
         return {"status": "good", "updated": "now"}
 

@@ -1,0 +1,12 @@
+[tool.black]
+line-length = 160
+py37 = true
+exclude = '''
+/(
+    \.git
+  | \.direnv
+  | \.local
+  | \.serverless/
+  | node_modules/
+)/
+'''

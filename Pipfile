@@ -17,6 +17,7 @@ pytest-mock = "*"
 pytest-pythonpath = "*"
 pytest-socket = "*"
 responses = "*"
+pytest-black = "*"
 
 [requires]
 python_version = "3.7"

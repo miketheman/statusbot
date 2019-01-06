@@ -12,8 +12,8 @@ Individual site-handling code can be found in the `statusbot/sites/` subdirector
 
 ## Components
 
--   Serverless (AWS Lambda, API Gateway)
--   api.ai
+-   [Serverless](https://serverless.com/) (AWS Lambda, API Gateway, et al)
+-   [Dialogflow](https://dialogflow.com/), formerly api.ai
 
 ## Requirments
 

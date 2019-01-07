@@ -7,7 +7,7 @@ STATUS_ENDPOINT = "https://mongocache.asm.ca.com/synth/current/39657/monitor/125
 
 
 def status():
-    resp = requests.get(STATUS_ENDPOINT, verify=False).json()
+    resp = requests.get(STATUS_ENDPOINT).json()
 
     current_status_report = resp["result"][0]["cur"]
 

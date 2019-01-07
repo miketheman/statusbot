@@ -29,3 +29,6 @@ var/
 # Serverless directories
 .requirements
 .serverless
+
+# mutmut testing
+.mutmut-cache

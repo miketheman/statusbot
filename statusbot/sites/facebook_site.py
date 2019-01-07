@@ -10,7 +10,7 @@ def status():
 
     current_status_report = resp["current"]
 
-    if current_status_report["health"] == 0:
+    if current_status_report["health"] == 1:
         status = "good"
     else:
         status = "not good"

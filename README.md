@@ -24,7 +24,7 @@ Individual site-handling code can be found in the `statusbot/sites/` subdirector
 
 ## Actions
 
-See `Makefile` for common tasks.
+Run `make help` for common tasks.
 
 ## License
 

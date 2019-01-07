@@ -20,6 +20,7 @@ responses = "*"
 pytest-black = "*"
 mutmut = "*"
 pytest-isort = "*"
+pytest-mypy = "*"
 
 [requires]
 python_version = "3.7"

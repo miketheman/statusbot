@@ -32,3 +32,6 @@ var/
 
 # mutmut testing
 .mutmut-cache
+
+# mypy typing cache
+.mypy_cache

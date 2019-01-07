@@ -6,7 +6,7 @@ help:
 clean:  ## Remove any generated artifacts
 	@find . -name \*.pyc -delete
 	@find . -name __pycache__ -delete
-	@rm -fr .cache/ .coverage* .mutmut-cache .pytest_cache/ .requirements/ htmlcov/
+	@rm -fr .cache/ .coverage* .mutmut-cache .mypy_cache/ .pytest_cache/ .requirements/ htmlcov/
 
 deploy: clean  ## Deploy application to production
 	@pipenv run serverless deploy

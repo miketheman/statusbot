@@ -19,6 +19,7 @@ pytest-socket = "*"
 responses = "*"
 pytest-black = "*"
 mutmut = "*"
+pytest-isort = "*"
 
 [requires]
 python_version = "3.7"

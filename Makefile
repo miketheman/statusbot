@@ -9,7 +9,7 @@ clean:  ## Remove any generated artifacts
 	@rm -fr .cache/ .coverage* .mutmut-cache .pytest_cache/ .requirements/ htmlcov/
 
 deploy: clean  ## Deploy application to production
-	@serverless deploy
+	@pipenv run serverless deploy
 
 setup:  ## Install node and python packagesa for development
 	@yarn install

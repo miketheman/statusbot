@@ -22,7 +22,7 @@ def check(event, _context):
         raise (RuntimeError)
 
     req_body = json.loads(event["body"])
-    site = req_body["result"]["parameters"]["Site"]
+    site = req_body["queryResult"]["parameters"]["Site"]
 
     try:
         site_name, check_response = status_check.check_site(site)
@@ -32,9 +32,9 @@ def check(event, _context):
         report(duration, "aws.lambda.statusbot.handler.duration_secs", tags=[f"site:{site_name}"])
 
         check_status = check_response["status"]
-        response_content = {"speech": f"The status of {site_name} site is {check_status}"}
+        response_content = {"fulfillment_text": f"The status of {site_name} site is {check_status}"}
     except NotImplementedError:
-        response_content = {"speech": f"The '{site}' site has not yet been implemented."}
+        response_content = {"fulfillment_text": f"The '{site}' site has not yet been implemented."}
 
     response = {"statusCode": 200, "headers": {"Content-type": "application/json"}, "body": json.dumps(response_content)}
 

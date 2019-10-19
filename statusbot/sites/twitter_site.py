@@ -16,7 +16,7 @@ def status():
     else:
         status = "not good"
 
-    updated = datetime.utcfromtimestamp(current_status_report["period"]["until"]["sec"])
+    updated = datetime.utcfromtimestamp(int(current_status_report["period"]["until"]["sec"]))
     updated = updated.replace(tzinfo=tzutc())
 
     return {"status": status, "updated": updated}

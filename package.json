@@ -5,8 +5,7 @@
   "repository": "https://github.com/miketheman/statusbot",
   "author": "Mike Fiedler <miketheman@gmail.com>",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
-    "serverless-python-requirements": "^3.0.5"
+    "serverless-python-requirements": "serverless/serverless-python-requirements#master"
   }
 }

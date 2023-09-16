@@ -3,7 +3,7 @@
 
 service: statusbot
 
-frameworkVersion: ">=1.9.0 <2.0.0"
+frameworkVersion: "3"
 
 plugins:
   - serverless-python-requirements
@@ -38,26 +38,27 @@ provider:
 #    variable1: value1
 
 package:
-  exclude:
-    - .cache/**
-    - .direnv/**
-    - .env
-    - .envrc
-    - .git/**
-    - .gitignore
-    - .serverless/**
-    - .tox/**
-    - dev-requirements.txt
-    - htmlcov/**
-    - LICENSE
-    - Makefile
-    - node_modules/**
-    - package.json
-    - README.md
-    - setup.cfg
-    - tests/**
-    - tox.ini
-    - yarn.lock
+  patterns:
+    - "!.cache/**"
+    - "!.direnv/**"
+    - "!.env"
+    - "!.envrc"
+    - "!.git/**"
+    - "!.gitignore"
+    - "!.serverless/**"
+    - "!.tox/**"
+    - "!dev-requirements.txt"
+    - "!htmlcov/**"
+    - "!LICENSE"
+    - "!Makefile"
+    - "!node_modules/**"
+    - "!package.json"
+    - "!package-lock.json"
+    - "!README.md"
+    - "!setup.cfg"
+    - "!tests/**"
+    - "!tox.ini"
+    - "!yarn.lock"
 
 functions:
   statuscheck:

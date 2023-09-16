@@ -12,7 +12,7 @@ deploy: clean  ## Deploy application to production
 	@pipenv run serverless deploy
 
 setup:  ## Install node and python packagesa for development
-	@yarn install
+	@npm install
 	@pipenv install --dev
 
 test:  ## Run tests

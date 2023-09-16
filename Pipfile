@@ -11,15 +11,15 @@ aws-xray-sdk = "*"
 
 [dev-packages]
 freezegun = "*"
-pytest = "<4.1"
+mutmut = "*"
+pytest = "*"
+pytest-black = "*"
 pytest-cov = "*"
+pytest-isort = "*"
 pytest-mock = "*"
 pytest-pythonpath = "*"
 pytest-socket = "*"
 responses = "*"
-pytest-black = "*"
-mutmut = "*"
-pytest-isort = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.11"

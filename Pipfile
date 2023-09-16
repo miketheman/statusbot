@@ -12,12 +12,11 @@ aws-xray-sdk = "*"
 [dev-packages]
 freezegun = "*"
 mutmut = "*"
-pytest = "*"
+pytest = ">=7.4"
 pytest-black = "*"
 pytest-cov = "*"
 pytest-isort = "*"
 pytest-mock = "*"
-pytest-pythonpath = "*"
 pytest-socket = "*"
 responses = "*"
 
